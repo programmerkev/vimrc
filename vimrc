@@ -9,7 +9,7 @@ let pair_program_mode = 0
 "------  Visual Options  ------
 syntax on
 set number
-set nowrap
+"set nowrap
 set vb
 set ruler
 set statusline=%<%f\ %h%m%r%=%{fugitive#statusline()}\ \ %-14.(%l,%c%V%)\ %P
@@ -37,7 +37,7 @@ set hidden
 filetype indent on
 filetype plugin on
 set autoindent
-"set expandtab
+set expandtab
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,node_modules/*
 
 "allow deletion of previously entered data in insert mode
@@ -116,7 +116,7 @@ nnoremap <silent> <Leader><C-q> :Bclose!<CR>
 set incsearch
 set ignorecase
 set smartcase
-set hlsearch
+"set hlsearch
 
 " Clear search highlights when pressing <Leader>b
 nnoremap <silent> <leader>b :nohlsearch<CR>
@@ -178,6 +178,8 @@ let NERDTreeMinimalUI=1
 " Shows invisibles
 let g:NERDTreeShowHidden=1
 
+" Close NERDTree after opening a file
+let NERDTreeQuitOnOpen=1
 
 "------  Fugitive Plugin Options  ------
 "https://github.com/tpope/vim-fugitive
@@ -205,6 +207,8 @@ map <Leader>R :retab<CR>
 " Deletes trailing space in file upon write
 " autocmd BufWritePre * :%s/\s\+$//e
 
+"------  Mustache Filetype Settings ------
+au BufRead,BufNewFile *.mustache set filetype=html
 
 "------  JSON Filetype Settings  ------
 au BufRead,BufNewFile *.json set filetype=json
