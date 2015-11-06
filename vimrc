@@ -175,9 +175,6 @@ autocmd vimenter * if !argc() | NERDTree | endif
 " Hides "Press ? for help"
 let NERDTreeMinimalUI=1
 
-" Shows invisibles
-let g:NERDTreeShowHidden=1
-
 " Close NERDTree after opening a file
 let NERDTreeQuitOnOpen=1
 
