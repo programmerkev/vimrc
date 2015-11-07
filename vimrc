@@ -246,27 +246,29 @@ let g:airline#extensions#tabline#left_alt_sep = ' '
 
 "------  GUI Options  ------
 if has("gui_running")
+
+	highlight iCursor guifg=white guibg=steelblue
+
 	" Hides toolbar and scrollbars and File menu
 	set guioptions=egt
 
 	" Highlights the current line background
 	set cursorline
-	colorscheme gotham
+	colorscheme desertEx
 
 	"autocmd VimEnter * TagbarOpen
 
 	" Open VIM in fullscreen window
-	set lines=200 columns=500
+	"set lines=200 columns=500
 
 	" Toggle fullscreen
 	map <silent> <leader>w :set lines=200 columns=500<CR>
 
 	" Build all help tags (slower launch, but I run GUI vim like once per day)
-	call pathogen#helptags()
+	"call pathogen#helptags()
 
 	if has("gui_macvim") " OS X
-		"set guifont=Monaco:h14
-		set guifont=Monaco:h10
+		set guifont=Monaco:h16
 		set noantialias
 		"set transparency=15
 
