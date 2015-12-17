@@ -204,9 +204,6 @@ map <Leader>R :retab<CR>
 " Deletes trailing space in file upon write
 " autocmd BufWritePre * :%s/\s\+$//e
 
-"------  Mustache Filetype Settings ------
-au BufRead,BufNewFile *.mustache set filetype=html
-
 "------  JSON Filetype Settings  ------
 au BufRead,BufNewFile *.json set filetype=json
 let g:vim_json_syntax_conceal = 0
@@ -351,6 +348,8 @@ else
 	colorscheme Mustang
 	set mouse=a
 endif
+
+let g:syntastic_mode_map = { "mode": "active",  "passive_filetypes": ["mustache"] }
 
 
 "------  Local Overrides  ------
