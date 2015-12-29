@@ -350,7 +350,7 @@ else
 endif
 
 let g:syntastic_mode_map = { "mode": "active",  "passive_filetypes": ["mustache"] }
-
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 "------  Local Overrides  ------
 if filereadable($HOME.'/.vimrc_local')
