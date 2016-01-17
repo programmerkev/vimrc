@@ -349,7 +349,7 @@ else
 	set mouse=a
 endif
 
-let g:syntastic_mode_map = { "mode": "active",  "passive_filetypes": ["mustache"] }
+let g:syntastic_mode_map = { "mode": "active",  "passive_filetypes": ["mustache", "html"] }
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 "------  Local Overrides  ------
