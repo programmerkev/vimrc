@@ -112,18 +112,22 @@ nnoremap <silent> <Leader>Q <C-w>c
 nnoremap <silent> <Leader><C-q> :Bclose!<CR>
 
 
+
+
 "------  Searching  ------
 set incsearch
 set ignorecase
 set smartcase
-"set hlsearch
 
-" Clear search highlights when pressing <Leader>b
-nnoremap <silent> <leader>b :nohlsearch<CR>
+" <Leader>f = enable search highlighting and find next match
+nmap <Leader>f :set hlsearch<CR>n
+
+" <Leader>b = turn search highlighting back off
+nnoremap <silent> <leader>b :set nohlsearch<CR>
 
 " http://www.vim.org/scripts/script.php?script_id=2572
 " <Leader>a will open a prmompt for a term to search for
-noremap <leader>a :Ack 
+noremap <leader>a :Ack
 
 " <Leader>A will close the new window created for that ack search
 noremap <leader>A <C-w>j<C-w>c<C-w>l
@@ -138,11 +142,21 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 "nnoremap g* g*zz
 "nnoremap g# g#zz
 
+
+
+
+"----CtrlP Settings----
+" <Leader>r to view recent files
+nmap <Leader>r :CtrlPMRUFiles<CR>
+
 " CtrlP will load from the CWD, makes it easier with all these nested repos
 let g:ctrlp_working_path_mode = ''
 
 " CtrlP won't show results from node_modules
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|coverage|target|dist)|(\.(swp|ico|git|svn))$'
+
+
+
 
 "type S, then type what you're looking for, a /, and what to replace it with
 nmap S :%s//g<LEFT><LEFT>
@@ -184,10 +198,10 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gremove<CR>
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gm :Gmove 
-nnoremap <Leader>gp :Ggrep 
+nnoremap <Leader>gm :Gmove
+nnoremap <Leader>gp :Ggrep
 nnoremap <Leader>gR :Gread<CR>
-nnoremap <Leader>gg :Git 
+nnoremap <Leader>gg :Git
 nnoremap <Leader>gd :Gdiff<CR>
 
 
