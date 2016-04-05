@@ -1,0 +1,11 @@
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = https://github.com/ervandew/supertab.git
+
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/mustache/vim-mustache-handlebars.git
+
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
