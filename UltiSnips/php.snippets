@@ -1,24 +1,43 @@
-snippet docbloc
-/**
- * $1
- */
-$0
-endsnippet
-
 snippet pf
-	public function $1($2) {
-		$3
-	}
+public function $1($2)
+{
+	$3
+}
 endsnippet
 
 snippet psf
-	public static function $1($2) {
-		$3
-	}
+public static function $1($2)
+{
+	$3
+}
 endsnippet
 
 snippet prf
-	protected function $1($2) {
-		$3
-	}
+protected function $1($2)
+{
+	$3
+}
+endsnippet
+
+snippet migdb
+$db = $this->getContainer()['db']->connection();
+endsnippet
+
+snippet migschema
+$db = $this->getContainer()['db']->schema();
+endsnippet
+
+snippet migacl
+$db = $this->getContainer()['db']->connection();
+$id = $db->table('permissions')->where('name', '${1:permission_name}')->pluck('id');
+$db->table('resources')->insert([
+	'url' => '$2',
+	'access' => '${3:Full Access}',
+	'permission_id' => $id,
+]);
+endsnippet
+
+snippet migacld
+$db = $this->getContainer()['db']->connection();
+$db->table('resources')->where('url', '$1')->delete();
 endsnippet
