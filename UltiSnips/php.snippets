@@ -1,3 +1,8 @@
+snippet php
+<?php
+
+endsnippet
+
 snippet pf
 public function $1($2)
 {
@@ -40,4 +45,13 @@ endsnippet
 snippet migacld
 $db = $this->getContainer()['db']->connection();
 $db->table('resources')->where('url', '$1')->delete();
+endsnippet
+
+snippet wpdocbloc
+/**
+ * Plugin Name: $1
+ * Description: $2
+ * Version: 0.1.0
+ */
+
 endsnippet
