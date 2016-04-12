@@ -112,6 +112,8 @@ nnoremap <silent> <Leader>Q <C-w>c
 nnoremap <silent> <Leader><C-q> :Bclose!<CR>
 
 
+" <Leader>O orders selected rows by length
+vmap <Leader>o  :! awk '{ print length(), $0 <bar> "sort -n <bar> cut -d\\  -f2-" }'<CR>
 
 
 "------  Searching  ------
