@@ -1,18 +1,23 @@
-snippet pf
+snippet php
+<?php
+
+endsnippet
+
+snippet pm
 public function $1($2)
 {
 	$3
 }
 endsnippet
 
-snippet psf
+snippet psm
 public static function $1($2)
 {
 	$3
 }
 endsnippet
 
-snippet prf
+snippet prm
 protected function $1($2)
 {
 	$3
@@ -40,4 +45,17 @@ endsnippet
 snippet migacld
 $db = $this->getContainer()['db']->connection();
 $db->table('resources')->where('url', '$1')->delete();
+endsnippet
+
+snippet ra
+Route::add('$1', '$2Controller.php', '$3');
+endsnippet
+
+snippet wpdocbloc
+/**
+ * Plugin Name: $1
+ * Description: $2
+ * Version: 0.1.0
+ */
+
 endsnippet
