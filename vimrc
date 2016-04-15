@@ -260,7 +260,9 @@ let g:airline#extensions#tabline#left_alt_sep = ' '
 
 
 "------ UltiSnips ------
-
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 
