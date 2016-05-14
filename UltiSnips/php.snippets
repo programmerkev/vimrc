@@ -64,3 +64,12 @@ snippet wpdocbloc
  */
 
 endsnippet
+
+snippet wpshortinit
+<?php
+// load the bare minimum of wordpress needed to complete the request
+define('SHORTINIT', true);
+$rootDir = realpath(__DIR__.'/../../../..');
+require $rootDir.'/wp-load.php';
+
+endsnippet
