@@ -32,6 +32,9 @@ endsnippet
 
 snippet migschema
 $schema = $this->getContainer()['db']->schema();
+$schema->table('$1', function($table) {
+	$table->$0
+});
 endsnippet
 
 snippet migacl

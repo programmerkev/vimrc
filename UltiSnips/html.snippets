@@ -6,3 +6,13 @@ snippet form-group
 	<input type="${3:text}" name="$4" class="form-control" id="$1">
 </div>
 endsnippet
+
+snippet select
+<select name="$1" class="form-control">
+	<option value="$2">$3</option>$0
+</select>
+endsnippet
+
+snippet fa
+<i class="fa fa-$1"></i> $0
+endsnippet
