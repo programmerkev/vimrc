@@ -5,6 +5,10 @@ snippet php
 
 endsnippet
 
+snippet t
+$this->
+endsnippet
+
 snippet pm
 public function $1($2)
 {
@@ -72,4 +76,23 @@ define('SHORTINIT', true);
 $rootDir = realpath(__DIR__.'/../../../..');
 require $rootDir.'/wp-load.php';
 
+endsnippet
+
+snippet eloquent
+<?php
+namespace App;
+
+use \Illuminate\Database\Eloquent\Model;
+
+class $1 extends Model {
+	$0
+}
+endsnippet
+
+snippet bladeext
+@extends('layout')
+
+@section('content')
+$0
+@endsection
 endsnippet
