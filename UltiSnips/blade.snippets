@@ -1,0 +1,49 @@
+extends php
+
+snippet bladeext
+@extends('layout')
+
+@section('content')
+$0
+@endsection
+endsnippet
+
+snippet blade.section
+@section('$1')
+$0
+@endsection
+endsnippet
+
+snippet bladef
+{!! Form::$1($2) !!}
+endsnippet
+
+snippet collective.fg
+<div class="form-group">
+	{!! Form::label('$1', '$2') !!}
+	{!! Form::${3:text}('$1', null, ['class' => 'form-control']) !!}
+</div>
+endsnippet
+
+snippet csrf
+{{ csrf_field() }}
+endsnippet
+
+snippet blade.fg
+<div class="form-group{{ $errors->has('$1') ? ' has-error' : '' }}">
+	<label for="$1" class="col-md-4 control-label">$2</label>
+	<div class="col-md-6">
+		<input id="$1"
+			type="text"
+			class="form-control"
+			name="$1"
+			value="{{ old('$1') ?: $$3->$1 }}"
+		>
+		@if ($errors->has('$1'))
+			<span class="help-block">
+			<strong>{{ $errors->first('$1') }}</strong>
+			</span>
+		@endif
+	</div>
+</div>
+endsnippet

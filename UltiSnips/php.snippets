@@ -9,6 +9,10 @@ snippet t
 $this->
 endsnippet
 
+snippet i
+$I->
+endsnippet
+
 snippet pm
 public function $1($2)
 {
@@ -30,18 +34,31 @@ protected function $1($2)
 }
 endsnippet
 
-snippet migdb
+snippet pp
+protected $
+endsnippet
+
+snippet mig.db
 $db = $this->getContainer()['db']->connection();
 endsnippet
 
-snippet migschema
+snippet mig.table
 $schema = $this->getContainer()['db']->schema();
 $schema->table('$1', function($table) {
 	$table->$0
 });
 endsnippet
 
-snippet migacl
+snippet mig.create
+$schema = $this->getContainer()['db']->schema();
+$schema->create('$1', function($table) {
+	$table->increments('id');
+	$table->$0
+	$table->timestamps();
+});
+endsnippet
+
+snippet mig.acl
 $db = $this->getContainer()['db']->connection();
 $id = $db->table('permissions')->where('name', '${1:permission_name}')->pluck('id');
 $db->table('resources')->insert([
@@ -51,13 +68,17 @@ $db->table('resources')->insert([
 ]);
 endsnippet
 
-snippet migacld
+snippet mig.acld
 $db = $this->getContainer()['db']->connection();
 $db->table('resources')->where('url', '$1')->delete();
 endsnippet
 
 snippet ra
 Route::add('$1', '$2Controller.php', '$3');
+endsnippet
+
+snippet ar
+$r->addRoute('${1:GET}', '$2', $3);
 endsnippet
 
 snippet wpdocbloc
@@ -80,19 +101,37 @@ endsnippet
 
 snippet eloquent
 <?php
-namespace App;
+namespace App${1:\Models};
 
-use \Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-class $1 extends Model {
-	$0
+class $2 extends Model
+{$0
 }
 endsnippet
 
-snippet bladeext
-@extends('layout')
+snippet r
+$r->addRoute('${1:GET}', '/$2', '$3');
+endsnippet
 
-@section('content')
-$0
-@endsection
+snippet db.alter
+DB::statement('ALTER TABLE ${1:table} MODIFY COLUMN ${2:column} ${3:column definition}');
+endsnippet
+
+snippet db.update
+DB::table('$1')->where('$2', $3)->update(['$4' => $5]);
+endsnippet
+
+snippet schema.create
+Schema::create('$1', function(Blueprint $table) {
+	$table->increments('id');
+	$table->$0
+	$table->timestamps();
+});
+endsnippet
+
+snippet schema.table
+Schema::table('$1', function(Blueprint $table) {
+	$table->$0
+});
 endsnippet
