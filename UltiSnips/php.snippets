@@ -58,6 +58,11 @@ $schema->create('$1', function($table) {
 });
 endsnippet
 
+snippet mig.drop
+$schema = $this->getContainer()['db']->schema();
+$schema->drop('$1');
+endsnippet
+
 snippet mig.acl
 $db = $this->getContainer()['db']->connection();
 $id = $db->table('permissions')->where('name', '${1:permission_name}')->pluck('id');
