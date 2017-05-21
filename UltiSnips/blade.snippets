@@ -1,9 +1,9 @@
 extends php
 
-snippet bladeext
-@extends('layout')
+snippet blade.extends
+@extends('layouts.$1')
 
-@section('content')
+@section('${2:content}')
 $0
 @endsection
 endsnippet
@@ -46,4 +46,10 @@ snippet blade.fg
 		@endif
 	</div>
 </div>
+endsnippet
+
+snippet bootstrap.tabs
+<ul class="nav nav-tabs">
+	<li role="presentation"><a href="$1">$2</a></li>
+</ul>
 endsnippet
