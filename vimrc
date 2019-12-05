@@ -220,6 +220,9 @@ map <Leader>R :retab<CR>
 " Deletes trailing space in file upon write
 " autocmd BufWritePre * :%s/\s\+$//e
 
+"------  Vuejs Filetype Settings ------
+au BufNewFile,BufRead *.vue set filetype=html
+
 "------  JSON Filetype Settings  ------
 au BufRead,BufNewFile *.json set filetype=json
 let g:vim_json_syntax_conceal = 0
