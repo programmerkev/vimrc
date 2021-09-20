@@ -5,6 +5,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'sheerun/vim-polyglot'
+"Plug 'pangloss/vim-javascript'
+"Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -148,7 +151,6 @@ let NERDTreeMinimalUI=1
 
 " Close NERDTree after opening a file
 let NERDTreeQuitOnOpen=1
-
 
 
 "------  Vuejs Filetype Settings ------
