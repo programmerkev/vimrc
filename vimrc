@@ -6,6 +6,7 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'leafOfTree/vim-vue-plugin'
 "Plug 'pangloss/vim-javascript'
 "Plug 'posva/vim-vue'
 
