@@ -217,9 +217,20 @@ let g:airline#extensions#tabline#left_alt_sep = ' '
 
 
 
+"------ PHP Settings -------
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 
+"------ Omni Complete Settings -----
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <C-f> <C-x><C-o>
 
 
 
