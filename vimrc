@@ -244,3 +244,7 @@ else
         colorscheme Mustang
         set mouse=a
 endif
+
+
+"----- Custom Commands -----
+command -nargs=1 SearchLaravel grep -r <args> vendor/laravel/framework/src/Illuminate/*
